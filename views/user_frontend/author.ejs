@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.info.pen_name %> Profile and Activity</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/authorPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="/scripts/authorPage.js" defer></script>
+</head>
+<body>
+    <%- include("../partials/userNavbar") %>
+    <main>
+        <div class="top-part">
+            <h1><%= locals.info.pen_name %></h1>
+        </div>
+        <div class="bott">
+            <div class="first">
+                <img src="<%= locals.info.img %>" alt="">
+            </div>
+            <div class="text">
+                <p><%= locals.info.bio %></p>
+            </div>
+        </div>
+        <p id="more">more from <%= locals.info.pen_name %></p>
+        <div class="posts-container">
+            <% if(locals.info.posts){%>
+                <% locals.info.posts.forEach(post => {%>
+                    <div class="post-item" data-post="<%= post.id %>">
+                        <div class="text">
+                            <h2><%= post.title %></h2>
+                            <div> <p><%= info.pen_name %></p> <p> <%= post.published_at %></p></div>
+                        </div>
+                        <div class="img">
+                            <img src="<%= post.img %>" alt="">
+                        </div>
+                    </div>
+               <% }); %>
+           <% } %>
+        </div>
+    </main>
+</body>
+</html>

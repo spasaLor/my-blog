@@ -1,0 +1,134 @@
+.post-container{
+    margin-bottom: 2em;
+}
+
+.post{
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    flex-direction: column;
+    margin: 0 3rem;
+}
+.post .pic{
+    width: 50%;
+    height: 500px;
+}
+.post .top{
+    display: flex;
+    justify-content: center;
+    gap:2em;
+    margin: 2em 0;
+    padding: 1em 0;
+    width: 100%;
+    border-bottom: 1px solid var(--color-border);
+}
+.pic img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.top .right{
+    display: flex;
+    flex-direction: column;
+}
+.top .right h2{
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    text-decoration:underline;
+    text-decoration-color: rgba(13, 129, 246, 0.207);
+    flex: 1;
+}
+.right .writer-info{
+    line-height: 25px;
+    margin-top: -5px;
+}
+.right a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.icons {
+    display: flex;
+    align-items: center;
+    gap:1em;
+}
+.icons i{
+    color: var(--color-text);
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.icons i:hover{
+    color: var(--color-bg);
+    background-color: var(--color-primary);
+    cursor: pointer;
+}
+.content{
+    max-width: 500px;
+    margin: 0 auto;
+    
+}
+.content h1,h2{
+    margin:10px 0;
+}
+.comments{
+    margin: 0 10rem;
+    margin-bottom: 2rem;
+}
+.comments h2{
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+}
+.comments .comment{
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:5px;
+}
+.comment-box{
+    margin: 0 10rem;
+    height: 400px;
+}
+#comment{
+    resize: none;
+    width: 100%;
+}
+#commentForm{
+    margin-bottom: 1em;
+}
+#commentBtn{
+    padding: 1em 2em;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #2b2f58;
+    color: var(--color-text);
+    border: none;
+    text-align: center;
+    border-radius: var(--border-radius);
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    margin: 1em 0;
+    transition: background-color 0.3s ease;
+}
+
+#commentBtn:hover{
+    cursor: pointer;
+    background-color: var(--color-primary);
+}
+#commentWarning{
+    font-size: 1.5rem;
+}
+#commentWarning a{
+    color: var(--color-primary);
+    text-decoration: none;
+}

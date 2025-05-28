@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Post</title>
+    <script src="/scripts/post.js" defer></script>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/post.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></head>
+    <script src="https://kit.fontawesome.com/a83e2c0492.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tiny.cloud/1/puf70dx3rttzxi7kdg0imgeoppwcifpgjfkp38uv1ssmx8x4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+</head>
+<body>
+    <%- include('../partials/userNavbar') %>
+    <main>
+        <div class="post-container">
+            <div class="post"></div>
+        </div>
+        <div class="comments"></div>
+        <div class="comment-box">
+            <p id="commentWarning" style="display: none;"><a href="/login">Log In</a> to leave a comment</p>
+            <form id="commentForm">
+                <textarea name="comment" id="comment">Leave a comment...</textarea>
+                <button type="button" id="commentBtn">Send</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

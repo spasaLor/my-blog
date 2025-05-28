@@ -1,0 +1,211 @@
+.selection{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+.selection button{
+    color: rgb(58, 58, 58);
+    background-color: var(--color-bg);
+    font-size: 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+button.active{
+    color:var(--color-warn);
+}
+.selection button:hover{
+    color:var(--color-border)
+}
+.posts-container{
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    gap:5rem;
+    height: 80vh;
+    margin-top: 2em;
+}
+.main-post{
+    position: relative;
+    width: 50%;
+
+}
+.posts-container .post{
+    width: 100%;
+}
+.posts-container .cover{
+    width: 100%;
+}
+.cover img{
+    object-fit: cover;
+    height: 400px;
+    width: 100%;
+}
+.cover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 68%;
+  background: linear-gradient(0deg, rgba(20, 20, 20, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+.text{
+    position: absolute;
+    top: 63%;
+    right: 0;
+    max-width: 400px;
+    font-size: 1.3rem;
+}
+.text h2{
+    line-height: 35px;
+    font-family: 'Press Start 2P',sans-serif;
+    margin-bottom: 5px;
+}
+.text>div, .post .left>div, .allPosts-text>div{
+    display: flex;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: bold;
+    align-items: center;
+    gap: 1em;
+}
+
+.text>div p:first-child, .post .left>div p:first-child, .allPosts-text>div p:first-child{
+    color: var(--color-primary);
+
+}
+.text>div p:last-child, .post .left>div p:last-child, .allPosts-text>div p:last-child{
+    color: #727171;
+
+}
+.side-post{
+    width: 30%;
+}
+.side-post .post{
+    width: 100%;
+    display: flex;
+    gap:1em;
+    align-items: center;
+    padding: 1em 0;
+    border-bottom: 1px solid var(--color-border);
+}
+.side-post .left{
+    flex: 1;
+}
+
+.post .img{
+    height: 80px;
+    width: 80px;
+}
+
+.side-post .post img{
+    height:100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.left h2{
+    font-size: 1.3rem;
+}
+ul {
+  list-style: none;
+  counter-reset: my-counter;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  counter-increment: my-counter;
+  position: relative;
+  padding-left: 2.5em;
+}
+
+ul li::before {
+  content: counter(my-counter);
+  position: absolute;
+  left: 0;
+  top: 45%;
+  transform: translateY(-52%);
+  background: #5e5e5e;
+  color:var(--color-primary);
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.5em;
+  font-weight: bold;
+}
+
+.main-post:hover, .post:hover{
+    cursor: pointer;
+}
+
+.main-post:hover h2, .post:hover h2{
+    text-decoration: underline;
+}
+.post:hover h2{
+    text-decoration-color: var(--color-primary);
+}
+
+.side-post>p{
+    margin-left: 2.1em;
+    color: var(--color-primary);
+}
+
+.allPosts{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+    gap:3em;
+    margin:2em 1em;
+
+}
+
+.allPosts-post{
+    height: 400px;
+    position: relative;
+}
+
+.allPosts-img{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.allPosts-img img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.allPosts-text{
+    width: 300px;
+    position: absolute;
+    bottom: 2%;
+    right: 10%;
+}
+.allPosts-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 83%;
+  background: linear-gradient(0deg, rgba(20, 20, 20, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+.allPosts-text h2{
+    font-size: 2rem;
+}
+.allPosts-post:hover{
+    cursor: pointer;
+}
+.allPosts-post:hover .allPosts-text h2{
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
+}

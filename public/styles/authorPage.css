@@ -1,0 +1,112 @@
+h1{
+    padding: 0 2.4em;
+    font-size: 4rem;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.top-part{
+    height: 40vh;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(0deg, rgba(20, 20, 20, 1) 0%,var(--color-primary) 10%, var(--color-primary) 100%);
+}
+nav{
+    background-color: var(--color-primary);
+}
+.nav-container{
+    margin: 0;
+    border-bottom: 1px solid var(--color-text);
+}
+.bott{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding: 3em 8em;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+    gap:1em;
+    background: linear-gradient(0deg, #131313 0, #131313 calc(100% - 60px), #131313bf);
+    margin-top: -25px;
+    z-index: 1;
+    position: relative;
+    height: 40vh;
+}
+
+.bott p{
+    line-height: 29px;
+}
+
+.first{
+    height: 110px;
+    width:  110px;
+}
+.first img{
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#more{
+    text-transform: uppercase;
+    color: var(--color-primary);
+    padding-left: 11em;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 2em;
+}
+.posts-container{
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+.post-item{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1em 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.post-item .text{
+    flex: 1;
+}
+.post-item .text>div{
+    display: flex;
+    align-items: center;
+    gap:1em;
+    margin-top: 5px;
+}
+.post-item .text>div p:first-child, .post-item .text>div p:last-child{
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: bold;
+    align-items: center;
+    color: var(--color-primary);
+    letter-spacing: 1.2px;
+}
+.post-item .text>div p:last-child{
+    color: #727070;
+}
+.post-item .img{
+    height: 140px;
+    width: 210px;
+}
+
+.img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.post-item:hover{
+    background-color: var(--color-surface);
+    cursor: pointer;
+}
+
+.post-item:hover .post-item h2{
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
+}
