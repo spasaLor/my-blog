@@ -53,4 +53,4 @@ app.get("/logout",controller.handleLogout);
 app.use((err,req,res,next)=>{
     console.log(err);
 })
-app.listen(8080,()=>console.log("Listening on http://localhost:8080"));
+app.listen(8080,()=>console.log("Running"));
