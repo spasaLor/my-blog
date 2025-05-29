@@ -50,19 +50,22 @@ form{
 
 form button{
     color: var(--color-text);
-    background-color: var(--color-primary);
+    background: var(--color-surface);
     padding: 1em 2em;
     text-transform: uppercase;
     font-size: 1rem;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--color-border);
 }
 
 form button:hover{
-    background-color: var(--color-primary-hover);
+    color: var(--color-primary);
+    border:2px solid var(--color-primary)
 }
+
 textarea{
     resize: none;
     background-color: var(--color-surface);

@@ -2,7 +2,6 @@ const {body,validationResult}=require('express-validator');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const prisma = require("../config/prisma");
-const { publishPost } = require('./postsController');
 
 registerValidator = [
     body("name").trim().isLength({min:2}).withMessage("Name must be at least 2 characters long")

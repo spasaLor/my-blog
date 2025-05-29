@@ -30,20 +30,20 @@ button.active{
     margin-top: 2em;
 }
 .main-post{
-    position: relative;
     width: 50%;
-
 }
 .posts-container .post{
     width: 100%;
+    position: relative;
 }
 .posts-container .cover{
-    width: 100%;
+    max-width: 100%;
+    height: 400px;
 }
 .cover img{
     object-fit: cover;
-    height: 400px;
     width: 100%;
+    display: block;
 }
 .cover::after {
   content: "";
@@ -51,13 +51,13 @@ button.active{
   top: 0;
   left: 0;
   width: 100%;
-  height: 68%;
+  height: 100%;
   background: linear-gradient(0deg, rgba(20, 20, 20, 1) 0%, rgba(255, 255, 255, 0) 100%);
   pointer-events: none;
 }
 .text{
     position: absolute;
-    top: 63%;
+    top: 84%;
     right: 0;
     max-width: 400px;
     font-size: 1.3rem;
@@ -222,8 +222,7 @@ ul li::before {
     .posts-container .main-post{
         width: 100%;
         height: 60vh;
-        padding-bottom: 4em;
-        border-bottom: var(--color-border);
+        border-bottom: 1px solid var(--color-border);
     }
     .posts-container .side-post{
         width: 100%;
