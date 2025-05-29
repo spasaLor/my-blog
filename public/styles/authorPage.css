@@ -1,5 +1,5 @@
 h1{
-    padding: 0 2.4em;
+    padding: 0 2.6em;
     font-size: 4rem;
 }
 body{
@@ -11,6 +11,8 @@ body{
     display: flex;
     align-items: flex-end;
     background: linear-gradient(0deg, rgba(20, 20, 20, 1) 0%,var(--color-primary) 10%, var(--color-primary) 100%);
+    font-family: 'Saira Extra Condensed';
+    font-size: 4rem;
 }
 nav{
     background-color: var(--color-primary);
@@ -28,7 +30,7 @@ nav{
     font-size: 1.3rem;
     gap:1em;
     background: linear-gradient(0deg, #131313 0, #131313 calc(100% - 60px), #131313bf);
-    margin-top: -25px;
+    margin-top: -35px;
     z-index: 1;
     position: relative;
     height: 40vh;

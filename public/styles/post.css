@@ -42,6 +42,10 @@
     line-height: 25px;
     margin-top: -5px;
 }
+.right .writer-info a{
+    text-transform: none;
+    color: var(--color-primary);
+}
 .right a{
     text-transform: uppercase;
     text-decoration: none;
@@ -126,7 +130,7 @@
     background-color: var(--color-primary);
 }
 #commentWarning{
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 #commentWarning a{
     color: var(--color-primary);

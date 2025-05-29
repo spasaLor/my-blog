@@ -54,9 +54,7 @@ a{
 .nav-container .right a{
     background-color: var(--color-bg);
     color: var(--color-text);
-    border: 1px solid var(--color-border);
     padding: 0.5em 1em;
-    transition: color 0.3s ease;
     width: 80px;
     text-align: center;
     border-radius: var(--border-radius);
@@ -66,14 +64,23 @@ a{
     justify-content: center;
     align-items: center;
     min-height: 35px;
+    position: relative;
 }
 
-.nav-container .right a:first-child:hover{
-    color: var(--color-primary);
+.nav-container .right a::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    translate: -50% -50%;
+    background: var(--color-border);
+    padding: 1px;
+    z-index: -1;
+    border-radius: var(--border-radius);
 }
-.nav-container .right a:nth-child(2):hover{
-    color: var(--color-primary);
-}
-.nav-container .right a:last-child:hover{
-    color: var(--color-error);
+
+.nav-container .right a:hover::after{
+    background: linear-gradient(45deg,var(--color-primary)0%,var(--color-warn) 55%, var(--color-error) 60%);
 }
