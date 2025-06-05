@@ -10,7 +10,6 @@ export default function UserLogin(){
 
     const loginForm = async(e)=>{
         e.preventDefault();
-        console.log(import.meta.env);
         const formData = new FormData(formRef.current);
         const res = await fetch(import.meta.env.VITE_BACKEND_URL+"/login",{
             method:"POST",

@@ -46,7 +46,7 @@ const handleLogin = async(req,res)=>{
 
     jwt.sign({id:exists.id},process.env.JWT_SECRET,(err,token)=>{
         if(err)
-            return res.render("login",{errors: [err]});
+            return res.json({errors: [err]});
         res.status(200).json({redirect:"/",accessToken:token})
     });
 }
