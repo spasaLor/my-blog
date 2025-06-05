@@ -30,7 +30,7 @@ app.get("/me",userPassport.authenticate('user-jwt',{session:false}), (req, res) 
 });
 
 app.get("/logout",controller.handleLogout);
-app.use((err,req,res,next)=>{
-    console.log(err);
-})
+app.get("/*splat", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/dist", "index.html"));
+});
 app.listen(8080,()=>console.log("Running on http://localhost:8080"));
