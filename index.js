@@ -19,33 +19,8 @@ app.use(cors({
 app.use('/posts',postsRouter);
 app.use('/authors',authorRouter);
 
-app.get("/",(req,res)=>{
-    res.redirect("/blog");
-})
-app.get("/register",(req,res)=>{
-    res.render("user_frontend/registration");
-})
-app.get("/login",(req,res)=>{
-    res.render("user_frontend/login");
-})
-
 app.post("/register",controller.registerUser);
 app.post("/login",controller.handleLogin);
-app.get('/blog',(req,res)=>{
-    res.render('user_frontend/home');
-});
-
-app.get("/blog/posts/:postId",(req,res)=>{
-    res.render('user_frontend/readPost');
-})
-
-app.get("/register_writer",(req,res)=>{
-    res.render("user_frontend/writerReg");
-})
-
-app.get("/login_writer",(req,res)=>{
-    res.render("writer_frontend/writerLogIn");
-})
 
 app.get("/me",userPassport.authenticate('user-jwt',{session:false}), (req, res) => {
     if(req.user.is_author === true)

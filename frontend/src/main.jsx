@@ -38,9 +38,6 @@ const router = createBrowserRouter([
     path:"login_author",
     element:<AuthorLogin/>
   },
-  {
-    path:"logout",
-  }
 ]);
 
 createRoot(document.getElementById('root')).render(
