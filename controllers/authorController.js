@@ -27,10 +27,18 @@ const registerWriter = [registerValidator, async(req,res)=>{
                 bio:req.body.bio
             }
         });
+        await prisma.users.update({
+            where:{
+                id:Number(req.user.id)
+            },
+            data:{
+                is_author:true
+            }
+        });
     } catch (error) {
-        return res.status(500).json([{msg:"You've already signed up as a writer"}]);
+        return res.status(500).json({errors:[{msg:"You've already signed up as a writer"}]});
     }
-    res.status(200).json({msg:"Success"});
+    res.status(200).json({redirect:"/author/login"});
 }]
 
 const loginWriter = async(req,res)=>{
@@ -54,13 +62,12 @@ const loginWriter = async(req,res)=>{
         if(err)
             return res.status(500).json({errors:[{message:err.message}]});
         
-        return res.json({redirect: "/authors/personal",token,user:auth.pen_name});
+        return res.json({redirect: "/personal/new_post",token,user:auth.pen_name});
     });
 }
 
 const newPost = async(req,res)=>{
     const data=req.body;
-    console.log(data);
     try {
         await prisma.posts.create({
             data:{
@@ -81,20 +88,25 @@ const newPost = async(req,res)=>{
 
 const authorProfile = async(req,res)=>{
     const {authorId}=req.params;
-    const info = await prisma.authors.findUnique({
-        where:{
-            id:Number(authorId)
-        },
-        include:{posts:true}
-    });
-    info.posts.forEach(post=>{
-        let date = new Date(post.published_at);
-        date=date.toDateString();
-        date=date.split(" ");
-        post.published_at=date[1]+" "+date[2];
-    })
-    
-    res.status(200).render("user_frontend/author",{info});
+    let info;
+    try {
+        info = await prisma.authors.findUnique({
+            where:{
+                id:Number(authorId)
+            },
+            include:{posts:true}
+        });
+        info.posts.forEach(post=>{
+            let date = new Date(post.published_at);
+            date=date.toDateString();
+            date=date.split(" ");
+            post.published_at=date[1]+" "+date[2];
+        })
+        
+    } catch (error) {
+        return res.status(400).json({redirect:"/"});
+    }
+    return res.status(200).json({info});
 }
 
 module.exports={registerWriter,loginWriter,newPost,authorProfile}

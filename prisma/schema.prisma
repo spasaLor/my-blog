@@ -41,9 +41,10 @@ model posts {
 }
 
 model users {
-  id       Int        @id @default(autoincrement())
-  username String     @unique @db.VarChar(20)
-  password String
-  authors  authors?
-  comments comments[]
+  id        Int        @id @default(autoincrement())
+  username  String     @unique @db.VarChar(20)
+  password  String
+  is_author Boolean?
+  authors   authors?
+  comments  comments[]
 }

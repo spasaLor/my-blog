@@ -50,7 +50,7 @@ const getPost = async(req,res)=>{
         comms.unshift(comm);
     });
     post.comments=comms;
-    res.status(200).json(post);
+    res.status(200).json({post:post});
 }
 
 const addComment = async(req,res)=>{
@@ -78,7 +78,7 @@ const allPostsFromAuthor = async(req,res)=>{
         },
         orderBy:{created_at:'desc'}
     });
-    res.status(200).json(posts);
+    res.status(200).json({posts});
 }
 
 const unpublishedFromAuthor=async(req,res)=>{
@@ -89,7 +89,7 @@ const unpublishedFromAuthor=async(req,res)=>{
         },
         orderBy:{created_at:'asc'}
     });
-    res.status(200).json(posts);
+    res.status(200).json({posts});
 }
 
 const publishPost = async(req,res)=>{
@@ -125,7 +125,7 @@ const editPost = async(req,res)=>{
     try {
         await prisma.posts.update({
             where:{
-                id:postId
+                id:Number(postId)
             },
             data:{
                 title:title,

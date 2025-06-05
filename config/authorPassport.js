@@ -5,7 +5,7 @@ const prisma = require("./prisma");
 
 const opt={
     secretOrKey:process.env.JWT_SECRET,
-    jwtFromRequest:ExtractJwt.fromAuthHeaderAsBearerToken()
+    jwtFromRequest:ExtractJwt.fromAuthHeaderAsBearerToken(),
 }
 
 const strat = new jwtStrategy(opt,async(payload,done)=>{
@@ -15,9 +15,9 @@ const strat = new jwtStrategy(opt,async(payload,done)=>{
         }
     });
     if(!auth)
-        return done(null,false);
+        done(null,false);
     else
-        return done(null,auth);
+        done(null,auth);
 })
 
 passport.use('auth-jwt',strat);

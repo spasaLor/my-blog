@@ -5,7 +5,7 @@ const controller = require("./controllers/blogController");
 const userPassport = require('./config/passportJwt');
 const postsRouter = require("./routes/postsRouter");
 const authorRouter = require("./routes/authorRouter");
-const passport = require("passport");
+const cors = require("cors");
 const app = express();
 
 app.set("view engine","ejs");
@@ -13,6 +13,7 @@ app.set('views',path.join(__dirname,'views'));
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(cors());
 
 app.use('/posts',postsRouter);
 app.use('/authors',authorRouter);
@@ -45,12 +46,15 @@ app.get("/login_writer",(req,res)=>{
     res.render("writer_frontend/writerLogIn");
 })
 
-app.get("/me", userPassport.authenticate('user-jwt', { session: false }), (req, res) => {
-    res.json({ role: 'user' });
+app.get("/me",userPassport.authenticate('user-jwt',{session:false}), (req, res) => {
+    if(req.user.is_author === true)
+        res.json({role:"author"});
+    else
+        res.json({role:"user"});
 });
 
 app.get("/logout",controller.handleLogout);
 app.use((err,req,res,next)=>{
     console.log(err);
 })
-app.listen(8080,()=>console.log("Running"));
+app.listen(8080,()=>console.log("Running on http://localhost:8080"));

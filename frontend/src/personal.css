@@ -1,0 +1,152 @@
+
+.personal-post-item h2{
+    margin: 0;
+}
+
+main.personal{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:2em;
+}
+
+.greeting{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0 2em 0;
+}
+
+.selection{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+.selection button{
+    color: rgb(58, 58, 58);
+    background-color: var(--color-bg);
+    font-size: 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+button.active{
+    color:var(--color-warn);
+}
+.selection button:hover{
+    color:var(--color-border)
+}
+form{
+    display: flex;
+    flex-direction: row;
+    gap:1em;
+    margin-bottom: 2em;
+}
+
+.form-item{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    width: 50%;
+    gap:5px;
+}
+
+.form-item input{
+    font-size: 1rem;
+    padding: 0.5em 0.75em;
+    padding-bottom: 0;
+    border: none;
+    border-bottom: 1px solid var(--color-text);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    width: 70%;
+    box-sizing: border-box;
+    outline: none;
+    flex: 1;
+}
+.personal-posts-container{
+    width: 80%;
+    margin: 2em auto;
+}
+
+.personal-posts-container button{
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    padding: 1em 4em;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    font-weight: bold;
+    min-height: 35px;
+    display: block;
+    margin: 2em auto;
+}
+
+.personal-posts-container button:hover{
+    cursor: pointer;
+    background-color: var(--color-primary-hover);
+}
+.personal-allPosts{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+    gap: 1em;
+
+}
+.personal-allPosts .personal-post-item{
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.personal-post-item .top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.personal-post-item .top svg{
+    transform: rotate(-45deg);
+}
+
+select{
+    font-size: 1rem;
+    background-color: var(--color-surface);
+    outline: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    padding: 0.5em 0;
+}
+
+.btns{
+    display: flex;
+    width: 100%;
+    gap:1em;
+}
+.btns button{
+    padding: 0.5em 1em;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+}
+.btns button:hover{
+    cursor: pointer;
+    background-color:#434040;
+}
+
+.select-box{
+    margin-bottom: 2em;
+}

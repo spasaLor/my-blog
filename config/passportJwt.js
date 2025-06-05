@@ -5,19 +5,22 @@ const passport = require('passport');
 
 const options={
     secretOrKey:process.env.JWT_SECRET,
-    jwtFromRequest:ExtractJwt.fromAuthHeaderAsBearerToken()
+    jwtFromRequest:ExtractJwt.fromAuthHeaderAsBearerToken(),
+    passReqToCallback:true
 };
 
-const strat = new jwtStrategy(options,async (payload,done)=>{
+const strat = new jwtStrategy(options,async (req,payload,done)=>{
     const user = await prisma.users.findUnique({
         where:{
             id:payload.id
         }
     });
     if(!user)
-        return done(null,false);
-    else
-        return done(null,user);
+        done(null,false);
+    else{
+        req.user=user;
+        done(null,user);
+    }
 })
 
 passport.use('user-jwt',strat);
