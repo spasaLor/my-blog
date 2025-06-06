@@ -1,4 +1,4 @@
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import NewPost from "./NewPost";
 import { useEffect, useState } from "react";
 

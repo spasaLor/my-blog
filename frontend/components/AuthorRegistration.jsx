@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
 export default function AuthorRegistration(){

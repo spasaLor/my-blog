@@ -21,14 +21,12 @@ app.use('/authors',authorRouter);
 
 app.post("/register",controller.registerUser);
 app.post("/login",controller.handleLogin);
-
 app.get("/me",userPassport.authenticate('user-jwt',{session:false}), (req, res) => {
     if(req.user.is_author === true)
         res.json({role:"author"});
     else
         res.json({role:"user"});
 });
-
 app.get("/logout",controller.handleLogout);
 app.get("/*splat", (req, res) => {
   res.sendFile(path.join(__dirname, "public/dist", "index.html"));

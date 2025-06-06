@@ -14,12 +14,14 @@ import AuthorLogin from '../components/AuthorLogin.jsx';
 import NewPost from '../components/NewPost.jsx';
 import AllPosts from '../components/AllPosts.jsx';
 import Unpublished from '../components/Unpublished.jsx';
+import ErrorPage from '../components/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path:"/",
     element:<App/>,
-    children:[{index:true,element:<Blog/>},{path:"author/:authorId",element:<AuthorInfo/>},{path:"author_signup",element:<AuthorRegistration/>},{path:"/post/:postId",element:<ReadPost/>}]
+    children:[{index:true,element:<Blog/>},{path:"author/:authorId",element:<AuthorInfo/>},{path:"author_signup",element:<AuthorRegistration/>},{path:"/post/:postId",element:<ReadPost/>}],
+    errorElement:<ErrorPage/>
   },
   {
     path:"login",
